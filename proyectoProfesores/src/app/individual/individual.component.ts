@@ -8,8 +8,8 @@ import { SetRoleService } from '../../servicios/set-role.service';
 })
 export class IndividualComponent implements OnInit {
 
-  public role:String="invitado";
-  public registrado:Boolean=false;
+  public role:string;
+  public registrado:Boolean;
   constructor(private setRole:SetRoleService) { }
   
   ngOnInit() {
@@ -21,7 +21,7 @@ export class IndividualComponent implements OnInit {
     this.setRole.getRole().subscribe(dato=>this.role=dato);
   }
   getRegistrado(){
-    this.setRole.getRegistrado().subscribe(dato=>this.registrado=dato);
+    this.setRole.getRegistrado().subscribe(user=>this.registrado=user);
   }
 
 }
