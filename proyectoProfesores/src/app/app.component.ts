@@ -6,10 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public showAdmin=false;
-  public showProfe=false;
-  public showAlumno=false;
-  public registrado=false;
-
   title = 'proyectoProfesores';
 }

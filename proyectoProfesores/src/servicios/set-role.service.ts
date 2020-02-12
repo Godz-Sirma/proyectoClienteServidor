@@ -14,10 +14,10 @@ export class SetRoleService {
   private urlRole="http://localhost/Cliente/role.php";
   private urlRegistrado="http://localhost/Cliente/usuarios.php";
 
-  // getRole():Observable<String>{
-  //   return this.http.get<String>(this.urlRole);
-  // }
-  // getRegistrado():Observable<Boolean>{
-  //   return this.http.get<Boolean>(this.urlRegistrado);
-  // }
+  getRole():Observable<String>{
+    return this.http.get<String>(this.urlRole);
+  }
+  getRegistrado():Observable<Boolean>{
+    return this.http.get<Boolean>(this.urlRegistrado);
+  }
 }

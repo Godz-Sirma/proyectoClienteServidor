@@ -8,6 +8,7 @@ import { SidemenuComponent } from './sidemenu/sidemenu.component';
 import { FooterComponent } from './footer/footer.component';
 import { IndividualComponent } from './individual/individual.component';
 
+import { SetRoleService } from '../servicios/set-role.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { IndividualComponent } from './individual/individual.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    SetRoleService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

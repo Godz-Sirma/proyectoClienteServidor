@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SetRoleService } from '../../servicios/set-role.service';
 
 @Component({
   selector: 'app-individual',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndividualComponent implements OnInit {
 
-  constructor() { }
-
+  public role:String="invitado";
+  public registrado:Boolean=false;
+  constructor(private setRole:SetRoleService) { }
+  
   ngOnInit() {
+    this.getRole();
+    this.getRegistrado();
+  }
+
+  getRole(){
+    this.setRole.getRole().subscribe(dato=>this.role=dato);
+  }
+  getRegistrado(){
+    this.setRole.getRegistrado().subscribe(dato=>this.registrado=dato);
   }
 
 }
