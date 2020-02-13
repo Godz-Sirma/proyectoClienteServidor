@@ -3,6 +3,6 @@
     <div class="card-body">
         <h5 class="card-title">{{profesor.asNombre}}</h5>
         <p class="card-text">{{profesor.asMensaje}}</p>
-        <a routerLink="" class="btn btn-primary">Detalles</a>
+        <a [routerLink]="detallesProfesor/{{profesor.kiTitulo}}" class="btn btn-primary">Detalles</a>
     </div>
 </div>

@@ -17,7 +17,6 @@ import { IndividualComponent } from './individual/individual.component';
 // -- Servicios --
 import { SetRoleService } from '../servicios/set-role.service';
 import { GestionarSidemenuService } from '../servicios/gestionar-sidemenu.service';
-import { ProfesoresComponent } from '../profesores/profesores.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +24,7 @@ import { ProfesoresComponent } from '../profesores/profesores.component';
     CabeceraComponent,
     SidemenuComponent,
     FooterComponent,
-    IndividualComponent,
-    ProfesoresComponent
+    IndividualComponent
   ],
   imports: [
     BrowserModule,
