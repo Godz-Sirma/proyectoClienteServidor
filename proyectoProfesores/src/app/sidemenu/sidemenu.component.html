@@ -1,25 +1,6 @@
 <!-- TODO CAMBIAR A JSON-->
-<p>
-<a routerLink="/listaprofes">
-    Ver profesores
-</a>
-</p>
-<p></p>
-<a routerLink="/listaclases">
-    Ver clases
-</a>
-<p>
-<a routerLink="/merchandising">
-    Merchandising
-</a>
-</p>
-<p>
-<a routerLink="/competiciones">
-    Competiciones
-</a>
-</p>
-<p>
-<a routerLink="/help">
-    Ayuda
-</a>
+<p *ngFor="let parrafo of listaSidemenu">
+    <a routerLink={{parrafo.link}}>
+        {{parrafo.nombre}}
+    </a>
 </p>

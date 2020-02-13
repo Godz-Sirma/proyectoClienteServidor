@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { IndividualComponent } from './individual/individual.component';
 
 import { SetRoleService } from '../servicios/set-role.service';
+import { GestionarSidemenuService } from '../servicios/gestionar-sidemenu.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SetRoleService } from '../servicios/set-role.service';
     AppRoutingModule
   ],
   providers: [
-    SetRoleService
+    SetRoleService,
+    GestionarSidemenuService
   ],
   bootstrap: [AppComponent]
 })

@@ -12,7 +12,7 @@ export class GestionarSidemenuService {
 
   private jsonSidemenu="http://localhost/Proyecto/sidemenu.json";
 
-  getRole():Observable<Sidemenu[]>{
+  getlista():Observable<Sidemenu[]>{
     return this.http.get<Sidemenu[]>(this.jsonSidemenu);
   }
 }
