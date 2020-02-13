@@ -1,0 +1,8 @@
+<div class="card" style="width: 18rem;" *ngFor="let profesor of listaProfes">
+    <img class="card-img-top" src={{profesor.asImagen}} alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{profesor.asNombre}}</h5>
+        <p class="card-text">{{profesor.asMensaje}}</p>
+        <a routerLink="" class="btn btn-primary">Detalles</a>
+    </div>
+</div>
