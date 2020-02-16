@@ -7,10 +7,16 @@ import { ProfesoresComponent } from '../../profesores/profesores.component';
 
 // -- Servicios --
 import { GestionarProfesoresService } from '../../servicios/gestionar-profesores.service';
+import { ClasesProfeComponent } from '../../clases-profe/clases-profe.component';
+import { DetallesProfeComponent } from '../../detalles-profe/detalles-profe.component';
+import { DetallesClaseComponent } from '../../detalles-clase/detalles-clase.component';
 
 @NgModule({
   declarations: [
-    ProfesoresComponent
+    ProfesoresComponent,
+    ClasesProfeComponent,
+    DetallesProfeComponent,
+    DetallesClaseComponent
   ],
   imports: [
     CommonModule
