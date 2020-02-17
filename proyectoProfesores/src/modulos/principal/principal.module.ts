@@ -10,13 +10,19 @@ import { GestionarProfesoresService } from '../../servicios/gestionar-profesores
 import { ClasesProfeComponent } from '../../clases-profe/clases-profe.component';
 import { DetallesProfeComponent } from '../../detalles-profe/detalles-profe.component';
 import { DetallesClaseComponent } from '../../detalles-clase/detalles-clase.component';
+import { MerchandisingComponent } from '../../merchandising/merchandising.component';
+import { CompeticionesComponent } from '../../competiciones/competiciones.component';
+import { AyudaComponent } from '../../ayuda/ayuda.component';
 
 @NgModule({
   declarations: [
     ProfesoresComponent,
     ClasesProfeComponent,
     DetallesProfeComponent,
-    DetallesClaseComponent
+    DetallesClaseComponent,
+    MerchandisingComponent,
+    CompeticionesComponent,
+    AyudaComponent
   ],
   imports: [
     CommonModule
