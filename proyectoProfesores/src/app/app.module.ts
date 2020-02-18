@@ -14,6 +14,8 @@ import { SidemenuComponent } from './sidemenu/sidemenu.component';
 import { FooterComponent } from './footer/footer.component';
 import { IndividualComponent } from './individual/individual.component';
 
+import { LandingPageComponent } from './landing-page/landing-page.component';
+
 // -- Servicios --
 import { SetRoleService } from '../servicios/set-role.service';
 import { GestionarSidemenuService } from '../servicios/gestionar-sidemenu.service';
@@ -24,7 +26,8 @@ import { GestionarSidemenuService } from '../servicios/gestionar-sidemenu.servic
     CabeceraComponent,
     SidemenuComponent,
     FooterComponent,
-    IndividualComponent
+    IndividualComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,

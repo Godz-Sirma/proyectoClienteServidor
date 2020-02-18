@@ -1,0 +1,22 @@
+[
+{
+    "nombre":"Ver Profes",
+    "link":"/listaProfes"
+},
+{
+    "nombre":"Ver Clases",
+    "link":"/listaClases"
+},
+{
+    "nombre":"Merchandising",
+    "link":"/merchandising"
+},
+{
+    "nombre":"Competiciones",
+    "link":"/competiciones"
+},
+{
+    "nombre":"Ayuda",
+    "link":"/help"
+}
+]

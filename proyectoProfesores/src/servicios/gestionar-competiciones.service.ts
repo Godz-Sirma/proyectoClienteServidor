@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
-import { Competiciones } from '../clases/competiciones';
-import { Observable,of, from } from 'rxjs';
+import { Observable, of} from 'rxjs';
+import { Competicion } from '../clases/competicion';
+
 
 @Injectable({
   providedIn: 'root'
