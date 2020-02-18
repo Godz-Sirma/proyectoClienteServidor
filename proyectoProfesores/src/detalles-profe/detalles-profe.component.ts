@@ -10,12 +10,13 @@ import { GestionarProfesoresService } from '../servicios/gestionar-profesores.se
 })
 export class DetallesProfeComponent implements OnInit {
   profesor:Profesor;
+  cargado:boolean=false;
 
   constructor(private router:Router,private activatedRoute:ActivatedRoute,private gestionarProfesor:GestionarProfesoresService) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(param => {
-      this.gestionarProfesor.getProfesor(param.kiTitulo).subscribe(dato=> {this.profesor=dato});
+      this.gestionarProfesor.getProfesor(param.kiTitulo).subscribe(dato=> {this.profesor=dato;this.cargado=true;});
     });
   }
 

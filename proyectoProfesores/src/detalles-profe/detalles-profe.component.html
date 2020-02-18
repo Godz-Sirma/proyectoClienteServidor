@@ -1,8 +1,11 @@
-<p>
-    <img [src]="profesor.asImagen" >
-</p>
-<p>Nombre: {{profesor.asNombre}} {{profesor.asApellido}}</p>
-<p>Direccion: {{profesor.precio}}</p>
-<p>Edad: {{profesor.aiEdad}}</p>
+<div *ngIf="cargado">
+    <p>
+        <img [src]="profesor.asImagen" >
+    </p>
+    <p>Nombre: {{profesor.asNombre}} {{profesor.asApellido}}</p>
+    <p>Direccion: {{profesor.precio}}</p>
+    <p>Edad: {{profesor.aiEdad}}</p>
 
-<p>Descripcion: {{profesor.asMensaje}}</p>
+    <p>Descripcion: {{profesor.asMensaje}}</p>
+
+</div>
