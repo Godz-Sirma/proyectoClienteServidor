@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // -- Componentes --
-import { ProfesoresComponent } from '../../profesores/profesores.component';
+import { GestionarProfesoresService } from '../../servicios/gestionar-profesores.service';
+import { GestionarCompeticionesService } from '../../servicios/gestionar-competiciones.service';
+import { GestionarClasesProfeService } from '../../servicios/gestionar-clases-profe.service';
 
 // -- Servicios --
-import { GestionarProfesoresService } from '../../servicios/gestionar-profesores.service';
+import { ProfesoresComponent } from '../../profesores/profesores.component';
 import { ClasesProfeComponent } from '../../clases-profe/clases-profe.component';
 import { DetallesProfeComponent } from '../../detalles-profe/detalles-profe.component';
 import { DetallesClaseComponent } from '../../detalles-clase/detalles-clase.component';
@@ -28,7 +30,9 @@ import { AyudaComponent } from '../../ayuda/ayuda.component';
     CommonModule
   ],
   providers: [
-    GestionarProfesoresService
+    GestionarProfesoresService,
+    GestionarClasesProfeService,
+    GestionarCompeticionesService
   ]
 })
 export class PrincipalModule { }
