@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GestionarProfesoresService } from '../servicios/gestionar-profesores.service';
 import { Profesor } from '../clases/profesor';
+import { GestionarProfesoresService } from '../servicios/gestionar-profesores.service';
 // import { } from ''; Filtro!!
 import { Router } from '@angular/router';
 

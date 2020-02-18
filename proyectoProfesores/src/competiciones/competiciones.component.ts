@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Competicion } from '../clases/competicion';
+
+import { GestionarCompeticionesService } from '../servicios/gestionar-competiciones.service';
+//import filtro
 
 @Component({
   selector: 'app-competiciones',
@@ -10,6 +14,10 @@ export class CompeticionesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getCompeticiones(){
+    
   }
 
 }

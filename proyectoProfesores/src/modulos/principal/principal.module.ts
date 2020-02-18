@@ -2,11 +2,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-// -- Componentes --
-import { ProfesoresComponent } from '../../profesores/profesores.component';
-
 // -- Servicios --
 import { GestionarProfesoresService } from '../../servicios/gestionar-profesores.service';
+
+// -- Componentes --
+import { ProfesoresComponent } from '../../profesores/profesores.component';
 import { ClasesProfeComponent } from '../../clases-profe/clases-profe.component';
 import { DetallesProfeComponent } from '../../detalles-profe/detalles-profe.component';
 import { DetallesClaseComponent } from '../../detalles-clase/detalles-clase.component';
