@@ -1,9 +1,13 @@
-<!-- <div class="card" style="width: 18rem;" *ngFor="let profesor of listaProfes">
-    <img class="card-img-top" src={{profesor.asImagen}} alt="Card image cap">
-    <div class="card-body">
-        <h5 class="card-title">{{profesor.asNombre}}</h5>
-        <p class="card-text">{{profesor.asMensaje}}</p>
-        <a [routerLink]="detallesProfesor/{{profesor.kiTitulo}}" class="btn btn-primary">Detalles</a>
-    </div>
-</div> -->
-<p>worksis</p>
+<!-- <span>Buscar<input type="text" name="filtro" (keyup)="filtrar($event)"></span> -->
+
+
+<div class="card-deck">
+    <div class="card text-center" style="width: 18rem;" *ngFor="let profesor of listaProfes">
+        <img class="card-img-top" src="{{profesor.asImagen}}" alt="profesor{{profesor.kiTitulo}}">
+        <div class="card-body">
+            <h5 class="card-title">{{profesor.asNombre}}</h5>
+            <p class="card-text">{{profesor.asMensaje}}</p>
+            <button class="btn btn-primary" (click)="mostrarDetalles(profesor.kiTitulo)">Detalles</button>
+        </div>
+    </div>   
+</div>

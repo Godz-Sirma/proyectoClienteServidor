@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GestionarProfesoresService } from '../servicios/gestionar-profesores.service';
 import { Profesor } from '../clases/profesor';
+// import { } from ''; Filtro!!
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,7 +14,7 @@ export class ProfesoresComponent implements OnInit {
   private listaProfes:Profesor[]=[];
   private listaProfesOriginal:Profesor[]=[];
 
-  constructor(private gestionarProfes:GestionarProfesoresService,private router:Router) { }
+  constructor(private gestionarProfes:GestionarProfesoresService,/*filtro,*/private router:Router) { }
 
   ngOnInit() {
     this.getProfes();
