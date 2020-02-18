@@ -12,9 +12,10 @@ export class GestionarCompeticionesService {
   constructor(private http:HttpClient) { }
 
   private jsonCompeticiones="http://localhost/Proyecto/competiciones.json";
+  private jsonCompeticion="http://localhost/Proyecto/competicion.php";
 
-  getProfesores():Observable<Competiciones[]>{
-    return this.http.get<Competiciones[]>(this.jsonCompeticiones);
+  getCompeticiones():Observable<Competicion[]>{
+    return this.http.get<Competicion[]>(this.jsonCompeticiones);
   }
 
 }

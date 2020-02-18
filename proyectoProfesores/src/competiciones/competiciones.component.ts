@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GestionarCompeticionesService } from '../servicios/gestionar-competiciones.service';
-import { Competiciones } from '../clases/competiciones';
+import { Competicion } from '../clases/competicion';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
 })
 export class CompeticionesComponent implements OnInit {
 
-  private listaCompeticiones:Competiciones[]=[];
-  private listaCompeticionesOriginal:Competiciones[]=[];
+  private listaCompeticiones:Competicion[]=[];
+  private listaCompeticionesOriginal:Competicion[]=[];
 
   constructor(private gestionarProfes:GestionarCompeticionesService,private router:Router) { }
 
@@ -20,16 +20,13 @@ export class CompeticionesComponent implements OnInit {
   }
 
   getCompeticiones(){
-    this.gestionarProfes.getProfesores().subscribe(datos=> 
+    this.gestionarProfes.getCompeticiones().subscribe(datos=> 
       {
         this.listaCompeticiones=datos;
         this.listaCompeticionesOriginal=datos;
       }
     );
   }
-
-  mostrarDetalles(kiCodigo){
-    this.router.navigate(["detallesCompeticiones/"+kiCodigo]);
-  }
+  
 
 }
