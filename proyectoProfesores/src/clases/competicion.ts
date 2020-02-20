@@ -1,3 +1,9 @@
 export class Competicion {
-    //TODO
+    cbDisponible:boolean;
+    kiCodigo:number;
+    asNombre:string;
+    kiFecha:string;
+    asUbicacion:string;
+    asGimnasio:string;
+    aiCoste:number;
 }
