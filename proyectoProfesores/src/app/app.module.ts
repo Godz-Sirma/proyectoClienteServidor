@@ -1,17 +1,18 @@
 // -- Utils --
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
+import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
 
 // -- Componentes --
 import { PrincipalModule } from '../modulos/principal/principal.module';
 
 // -- Componentes --
-import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { SidemenuComponent } from './sidemenu/sidemenu.component';
 import { FooterComponent } from './footer/footer.component';
+import { CarritoComponent } from './carrito/carrito.component';
 import { IndividualComponent } from './individual/individual.component';
 
 import { LandingPageComponent } from './landing-page/landing-page.component';
@@ -19,6 +20,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 // -- Servicios --
 import { SetRoleService } from '../servicios/set-role.service';
 import { GestionarSidemenuService } from '../servicios/gestionar-sidemenu.service';
+import { GestionarCarritoService } from '../servicios/gestionar-carrito.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { GestionarSidemenuService } from '../servicios/gestionar-sidemenu.servic
     SidemenuComponent,
     FooterComponent,
     IndividualComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { GestionarSidemenuService } from '../servicios/gestionar-sidemenu.servic
   ],
   providers: [
     SetRoleService,
-    GestionarSidemenuService
+    GestionarSidemenuService,
+    GestionarCarritoService
   ],
   bootstrap: [AppComponent]
 })

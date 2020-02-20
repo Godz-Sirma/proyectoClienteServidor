@@ -7,6 +7,7 @@ import { GestionarProfesoresService } from '../../servicios/gestionar-profesores
 import { GestionarCompeticionesService } from '../../servicios/gestionar-competiciones.service';
 import { GestionarClasesProfeService } from '../../servicios/gestionar-clases-profe.service';
 import { GestionarFiltroService } from '../../servicios/gestionar-filtro.service';
+import { GestionarCarritoService } from '../../servicios/gestionar-carrito.service';
 
 // -- Componentes --
 import { ProfesoresComponent } from '../../profesores/profesores.component';
@@ -16,6 +17,7 @@ import { DetallesClaseComponent } from '../../detalles-clase/detalles-clase.comp
 import { MerchandisingComponent } from '../../merchandising/merchandising.component';
 import { CompeticionesComponent } from '../../competiciones/competiciones.component';
 import { AyudaComponent } from '../../ayuda/ayuda.component';
+import { PaginaCompraComponent } from '../../pagina-compra/pagina-compra.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { AyudaComponent } from '../../ayuda/ayuda.component';
     DetallesClaseComponent,
     MerchandisingComponent,
     CompeticionesComponent,
-    AyudaComponent
+    AyudaComponent,
+    PaginaCompraComponent
   ],
   imports: [
     CommonModule
@@ -34,7 +37,8 @@ import { AyudaComponent } from '../../ayuda/ayuda.component';
     GestionarProfesoresService,
     GestionarClasesProfeService,
     GestionarCompeticionesService,
-    GestionarFiltroService
+    GestionarFiltroService,
+    GestionarCarritoService
   ]
 })
 export class PrincipalModule { }

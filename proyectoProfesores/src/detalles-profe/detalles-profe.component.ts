@@ -15,6 +15,7 @@ export class DetallesProfeComponent implements OnInit {
   constructor(private router:Router,private activatedRoute:ActivatedRoute,private gestionarProfesor:GestionarProfesoresService) { }
 
   ngOnInit() {
+    // this.activatedRoute.snapshot.paramMap.get("[nombre del atributo a buscar]");
     this.activatedRoute.params.subscribe(param => {
       this.gestionarProfesor.getProfesor(param.kiTitulo).subscribe(dato=> {this.profesor=dato;this.cargado=true;});
     });

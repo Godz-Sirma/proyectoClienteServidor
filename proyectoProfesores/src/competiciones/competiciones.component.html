@@ -1,3 +1,5 @@
+
+<h1>ATENCION</h1><h3>Esto se trata solo de un panel informativo, las inscripciones a las competiciones están desabilitadas por el momento</h3>
 <p>Buscar : <input type="text" name="filtro" (keyup)="filtrar($event)">. (Ten en cuenta que buscara por <strong>Nombre, Ubicacion y Gimnasio.)</strong> </p>
 
  <table class="table table-striped text-center">
@@ -9,6 +11,7 @@
         <th scope="col">Ubicacion</th>
         <th scope="col">Gimnasio</th>
         <th scope="col">Coste</th>
+        <th scope="col">Inscripcion</th>
       </tr>
     </thead>
     <tbody>
@@ -21,13 +24,16 @@
             <input type="checkbox" disabled>
           </ng-template>
         </th>
-        
+          
         <td>{{ competicion.asNombre }}</td>
         <td>{{ competicion.kiFecha }}</td>
         <td>{{ competicion.asUbicacion }}</td>
         <td>{{ competicion.asGimnasio }}</td>
         <td>{{ competicion.aiCoste | currency }}</td>
+        <td> <button disabled class="btn btn-primary">Inscribete</button></td>
+
       </tr>
     </tbody>
+    <!-- (click)="mostrarDetalles(competicion.kiCodigo)" -->
 </table>
   
