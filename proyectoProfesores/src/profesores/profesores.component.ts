@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Profesor } from '../clases/profesor';
 import { GestionarProfesoresService } from '../servicios/gestionar-profesores.service';
 import { GestionarFiltroService } from '../servicios/gestionar-filtro.service';
 import { Router } from '@angular/router';
+import { Profesor } from '../clases/profesor';
 
 @Component({
   selector: 'app-profesores',
@@ -18,18 +18,17 @@ export class ProfesoresComponent implements OnInit {
 
   ngOnInit() {
     this.getProfes();
-    this.gestionarFiltro.filtro.subscribe(filtro=>this.filtrar(filtro));
+    this.gestionarFiltro.filtro.subscribe(filtro=>this.filtrarProfesores(filtro));
   }
 
-  filtrar2(event){
+  filtrar(event){
     this.gestionarFiltro.cambiarFiltro(event.target.value.toLocaleLowerCase());
   }
 
-  filtrar(filtro){
-    alert(filtro);
+  filtrarProfesores(filtro){
     this.listaProfes=this.listaProfesOriginal.filter(x=> 
       x.asNombre.toLocaleLowerCase().indexOf(filtro)!=-1/*||x.asApellido.toLocaleLowerCase().indexOf(filtro)!=-1*/
-      );
+    );
   }
 
   getProfes(){
