@@ -1,0 +1,11 @@
+<p>Buscar: <input type="text" name="filtro" (keyup)="filtrar($event)"></p>ac
+
+<div class="card-deck">
+    <div class="card text-center" style="width: 18rem;" *ngFor="let actividad of listaActividades">
+        <div class="card-body">
+            <h5 class="card-title">{{actividad.ksNombre}}</h5>
+            <p class="card-text"><strong> Profesores:</strong></p>
+            <p class="card-text" *ngFor="let profesor of actividad.aaProfesores">{{profesor}}</p>
+        </div>
+    </div>   
+</div>

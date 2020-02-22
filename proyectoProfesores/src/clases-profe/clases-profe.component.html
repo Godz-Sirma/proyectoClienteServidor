@@ -1,1 +1,23 @@
-<p>clases-profe works!</p>
+<p>Buscar: <input type="text" name="filtro" (keyup)="filtrar($event)">.
+
+ <table class="table table-striped text-center">
+    <thead>
+      <tr>
+        <th scope="col">Profesor</th>
+        <th scope="col">Actividad</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Detalles</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let clase of listaClases">
+          
+        <td>{{ clase.ksTituloProfe }}</td>
+        <td>{{ clase.ksActividad }}</td>
+        <td>{{ clase.aiPrecio }}</td>
+        <td><button class="btn btn-primary" (click)="mostrarDetalles(clases.kiCodigo)">Info</button></td>
+
+      </tr>
+    </tbody>
+</table>
+  

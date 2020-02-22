@@ -1,6 +1,6 @@
 export class ClasesProfe {
     kiCodigo:number;
-    kiTituloProfe:number;
+    ksTituloProfe:string;
     ksActividad:string;
     aiPrecio:number;
 }

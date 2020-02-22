@@ -13,6 +13,9 @@ import { DetallesClaseComponent } from '../detalles-clase/detalles-clase.compone
 // -- Simples/Sin Detalles --
 import { CompeticionesComponent } from '../competiciones/competiciones.component';
 import { AyudaComponent } from '../ayuda/ayuda.component';
+import { ActividadesComponent } from '../actividades/actividades.component';
+import { CarritoComponent } from './carrito/carrito.component';
+import { ComprarComponent } from '../comprar/comprar.component';
 
 
 const routes: Routes = [
@@ -21,7 +24,10 @@ const routes: Routes = [
   {path:"listaClases",component: ClasesProfeComponent},
   {path:"detallesClase/:kiCodigo",component: DetallesClaseComponent},
   
-  {path:"competiciones",component: CompeticionesComponent},
+  {path:"listaCompeticiones",component: CompeticionesComponent},
+  {path:"listaActividades",component: ActividadesComponent},
+  {path:"comprar",component: ComprarComponent},
+  {path:"carrito",component: CarritoComponent},
   {path:"ayuda",component: AyudaComponent},
   
   {path:"landingPage",component: LandingPageComponent},

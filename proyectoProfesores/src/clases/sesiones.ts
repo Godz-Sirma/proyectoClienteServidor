@@ -1,7 +1,6 @@
 export class Sesiones {
     kiCodigo:number;
-    kiTituloProfe:number;
-    ksActividad:string;
+    kiClase:number; /**Apunta a la relacion profe-actividad */
     kiFecha:string;
     aiPrecio:number;
 }

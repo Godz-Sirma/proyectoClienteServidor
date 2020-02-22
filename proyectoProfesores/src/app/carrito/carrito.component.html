@@ -1,16 +1,14 @@
 <table>
-    <!-- <th>Codigo de Clase</th> -->
     <th>Profesor</th>
     <th>Actividad</th>
     <th>Fecha</th>
     <th>Precio</th>
     <th>Eliminar</tr>
-    <tr *ngFor="let sesion of carrito; index as i">
-        <td> {{sesion.kiTituloProfesor}} </td>
-        <td> {{sesion.ksActividad}} </td>
-        <td> {{sesion.kiFecha}} </td>
-        <td> {{sesion.aiPrecio}} </td>
-        <td> <input type="checkbox" name="sesion-sesion.kiCodigo"></td>
+    <tr *ngFor="let clase of carrito; index as i">
+        <td> {{clase.kiTituloProfesor}} </td>
+        <td> {{clase.ksActividad}} </td>
+        <td> {{clase.kiFecha}} </td>
+        <td> {{clase.aiPrecio}} </td>
+        <td> <button class="btn btn-primary" (click)="borrar(clase.kiCodigo)">X</button></td>
     </tr>
 </table>
-<button class="btn btn-primary" (click)="borrar()">Borrar los registros marcados</button>

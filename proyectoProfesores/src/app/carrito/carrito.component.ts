@@ -20,11 +20,7 @@ export class CarritoComponent implements OnInit {
   getCarrito(){
     this.carrito=this.GestionarCarrito.getCarrito();
   }
-
-  borrar(){
-    
-  }
-
+  
   borrarSesion(id){
     this.GestionarCarrito.deleteFromCarrito(id);
     this.getCarrito();

@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { GestionarProfesoresService } from '../../servicios/gestionar-profesores.service';
 import { GestionarCompeticionesService } from '../../servicios/gestionar-competiciones.service';
 import { GestionarClasesProfeService } from '../../servicios/gestionar-clases-profe.service';
+import { GestionarActividadesService } from '../../servicios/gestionar-actividades.service';
 import { GestionarFiltroService } from '../../servicios/gestionar-filtro.service';
 import { GestionarCarritoService } from '../../servicios/gestionar-carrito.service';
 
@@ -14,10 +15,11 @@ import { ProfesoresComponent } from '../../profesores/profesores.component';
 import { ClasesProfeComponent } from '../../clases-profe/clases-profe.component';
 import { DetallesProfeComponent } from '../../detalles-profe/detalles-profe.component';
 import { DetallesClaseComponent } from '../../detalles-clase/detalles-clase.component';
-import { MerchandisingComponent } from '../../merchandising/merchandising.component';
 import { CompeticionesComponent } from '../../competiciones/competiciones.component';
 import { AyudaComponent } from '../../ayuda/ayuda.component';
 import { PaginaCompraComponent } from '../../pagina-compra/pagina-compra.component';
+import { ComprarComponent } from '../../comprar/comprar.component';
+import { ActividadesComponent } from '../../actividades/actividades.component';
 
 @NgModule({
   declarations: [
@@ -25,10 +27,11 @@ import { PaginaCompraComponent } from '../../pagina-compra/pagina-compra.compone
     ClasesProfeComponent,
     DetallesProfeComponent,
     DetallesClaseComponent,
-    MerchandisingComponent,
     CompeticionesComponent,
     AyudaComponent,
-    PaginaCompraComponent
+    PaginaCompraComponent,
+    ComprarComponent,
+    ActividadesComponent
   ],
   imports: [
     CommonModule
@@ -37,6 +40,7 @@ import { PaginaCompraComponent } from '../../pagina-compra/pagina-compra.compone
     GestionarProfesoresService,
     GestionarClasesProfeService,
     GestionarCompeticionesService,
+    GestionarActividadesService,
     GestionarFiltroService,
     GestionarCarritoService
   ]
