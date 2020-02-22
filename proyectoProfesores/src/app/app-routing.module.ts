@@ -11,7 +11,6 @@ import { ClasesProfeComponent } from '../clases-profe/clases-profe.component';
 import { DetallesClaseComponent } from '../detalles-clase/detalles-clase.component';
 
 // -- Simples/Sin Detalles --
-import { MerchandisingComponent } from '../merchandising/merchandising.component';
 import { CompeticionesComponent } from '../competiciones/competiciones.component';
 import { AyudaComponent } from '../ayuda/ayuda.component';
 
@@ -22,7 +21,6 @@ const routes: Routes = [
   {path:"listaClases",component: ClasesProfeComponent},
   {path:"detallesClase/:kiCodigo",component: DetallesClaseComponent},
   
-  {path:"merchandising",component: MerchandisingComponent},
   {path:"competiciones",component: CompeticionesComponent},
   {path:"ayuda",component: AyudaComponent},
   
