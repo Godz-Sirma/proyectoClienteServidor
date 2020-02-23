@@ -15,7 +15,6 @@ export class ActividadesComponent implements OnInit {
   
   constructor(private gestionarActividades:GestionarActividadesService, private gestionarFiltro:GestionarFiltroService) { }
 
-
   ngOnInit() {
     this.getActividades();
     this.gestionarFiltro.filtro.subscribe(filtro=>this.filtrarActividades(filtro));
