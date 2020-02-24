@@ -19,12 +19,18 @@ export class GestionarComprarService {
 
   //http://localhost/Proyecto/profesor.php?kiTitulo=1
   
-  getProfesores():Observable<Profesor[]>{
+  getProfesores(profesor):Observable<Profesor[]>{
+    if(profesor=="predefinido"){
+
+    }else{
+
+    }
     return this.http.get<Profesor[]>(this.jsonProfesores);
+
   }
 //Añadir los casos de prueba
-  getActividades():Observable<Profesor[]>{
-    return this.http.get<Profesor[]>(this.jsonProfesores);
+  getActividades(actividad):Observable<Actividades[]>{
+     return this.http.get<Actividades[]>(this.jsonActividades);
   }
 
 }

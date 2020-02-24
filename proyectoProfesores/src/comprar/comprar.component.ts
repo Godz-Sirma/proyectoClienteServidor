@@ -16,10 +16,10 @@ export class ComprarComponent implements OnInit {
   private listaProfesores:Profesor[]=[];
   private listaActividades:Actividades[]=[];
 
-  private actividadPasada:string="ninguna";
-  private profesorPasado:string="ninguno";
+  private actividadPasada:string="predefinido";
+  private profesorPasado:string="predefinido";
 
-  constructor() { }
+  constructor(private gestionarComprar: GestionarComprarService) { }
 
   ngOnInit() {
     this.buscarActividades(this.actividadPasada);
@@ -27,7 +27,14 @@ export class ComprarComponent implements OnInit {
   }
 
   buscarActividades(event){
-    
+  this.gestionarComprar.getActividades().subscribe( actividades => {
+    this.listaActividades = actividades;
+    if (EventSource.value =="predefinido"){
+      this.gestionarComprar.getProfesores()
+    } else {
+
+    }
+  });    
   }
 
   buscarProfesores(event){
