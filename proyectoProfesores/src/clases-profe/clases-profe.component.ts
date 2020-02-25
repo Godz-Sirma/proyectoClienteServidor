@@ -28,7 +28,7 @@ export class ClasesProfeComponent implements OnInit {
 
   filtrarClases(filtro){
     this.listaClases=this.listaClasesOriginal.filter(x=> 
-      x.ksActividad.toLocaleLowerCase().indexOf(filtro)!=-1
+      x.ksActividad.toLocaleLowerCase().indexOf(filtro)!=-1||x.ksTituloProfe.toLocaleLowerCase().indexOf(filtro)!=-1
     );
   }
 

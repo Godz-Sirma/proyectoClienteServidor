@@ -26,7 +26,7 @@ const routes: Routes = [
   
   {path:"listaCompeticiones",component: CompeticionesComponent},
   {path:"listaActividades",component: ActividadesComponent},
-  {path:"comprar/:profesor/:actividad",component: ComprarComponent},
+  {path:"comprar/:kiTitulo/:ksNombre",component: ComprarComponent},
   {path:"carrito",component: CarritoComponent},
   {path:"ayuda",component: AyudaComponent},
   

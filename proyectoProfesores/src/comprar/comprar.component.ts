@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GestionarCarritoService } from '../servicios/gestionar-carrito.service';
 import { GestionarComprarService } from '../servicios/gestionar-comprar.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Sesiones } from '../clases/sesiones';
 import { Profesor } from '../clases/profesor';
 import { Actividades } from '../clases/actividades';
@@ -19,30 +19,44 @@ export class ComprarComponent implements OnInit {
   private actividadPasada:string="predefinido";
   private profesorPasado:string="predefinido";
 
-  constructor(private gestionarComprar: GestionarComprarService) { }
+
+
+  constructor(private router:Router, private gestionarComprar:GestionarComprarService, private activatedRoute:ActivatedRoute, private gestionarCarrito:GestionarCarritoService) { }
 
   ngOnInit() {
+    this.activatedRoute.params.subscribe(param =>{
+      this.actividadPasada=param.ksNombre;
+      this.profesorPasado=param.kiTitulo;
+    });
+
     this.buscarActividades(this.actividadPasada);
     this.buscarProfesores(this.profesorPasado);
   }
 
   buscarActividades(event){
-  this.gestionarComprar.getActividades().subscribe( actividades => {
-    this.listaActividades = actividades;
-    if (EventSource.value =="predefinido"){
-      this.gestionarComprar.getProfesores()
-    } else {
-
+    if(event.target.value=="predefinido"){
+      this.gestionarComprar.getActividadesGeneral().subscribe(datos=>this.listaActividades=datos);
+    }else{
+      this.gestionarComprar.getActividadesEspecifico(event.value).subscribe(datos=>this.listaActividades=datos);
     }
-  });    
+    this.actividadPasada=event.target.value;
   }
 
   buscarProfesores(event){
-
+    if(event.target.value=="predefinido"){
+      this.gestionarComprar.getProfesoresGeneral().subscribe(datos=>this.listaProfesores=datos);
+    }else{
+      this.gestionarComprar.getProfesoresEspecifico(event.value).subscribe(datos=>this.listaProfesores=datos);
+    }
+    this.profesorPasado=event.target.value;
   }
 
   comprar(){
+    let sesion:Sesiones;
+    sesion;
+    this.gestionarCarrito.addToCarrito(sesion);
 
+    this.router.navigate(["carrito"]);
   }
 
 }

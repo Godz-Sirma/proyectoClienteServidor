@@ -11,26 +11,27 @@ export class GestionarComprarService {
 
   constructor(private http:HttpClient) { }
 
-  private jsonProfesores="http://localhost/Proyecto/profesores.json";
-  private jsonProfesor="http://localhost/Proyecto/profesor.php";
-  private jsonActividades="http://localhost/Proyecto/actividades.php";
-  private jsonactividad="http://localhost/Proyecto/actividad.php";
+  private jsonProfesoresGeneral="http://localhost/Proyecto/profesoresGeneral.json";
+  private jsonProfesoresEspecifico="http://localhost/Proyecto/profesoresEspecifico.php";
+  private jsonActividadesGeneral="http://localhost/Proyecto/actividadesGeneral.php";
+  private jsonActividadesEspecifico="http://localhost/Proyecto/actividadesEspecifico.php";
+//http://localhost/Proyecto/profesor.php?kiTitulo=1
 
-
-  //http://localhost/Proyecto/profesor.php?kiTitulo=1
-  
-  getProfesores(profesor):Observable<Profesor[]>{
-    if(profesor=="predefinido"){
-
-    }else{
-
-    }
-    return this.http.get<Profesor[]>(this.jsonProfesores);
-
+//Busca todos los profes
+  getProfesoresGeneral():Observable<Profesor[]>{
+    return this.http.get<Profesor[]>(this.jsonProfesoresGeneral);
   }
-//Añadir los casos de prueba
-  getActividades(actividad):Observable<Actividades[]>{
-     return this.http.get<Actividades[]>(this.jsonActividades);
+//Busca los profesores relacionados con una actividad
+  getProfesoresEspecifico(ksNombre):Observable<Profesor[]>{
+    return this.http.get<Profesor[]>(this.jsonProfesoresEspecifico+"?ksNombre="+ksNombre);
+  }
+//Busca todas las actividades
+  getActividadesGeneral():Observable<Actividades[]>{
+    return this.http.get<Actividades[]>(this.jsonActividadesGeneral);
+  }
+//Busca las actividades que tengan un profesor con ese kiTitulo
+  getActividadesEspecifico(kiTitulo):Observable<Actividades[]>{
+    return this.http.get<Actividades[]>(this.jsonActividadesEspecifico+"?kiTitulo="+kiTitulo);
   }
 
 }
