@@ -12,8 +12,8 @@ export class GestionarCarritoService {
     if(!localStorage.getItem("carrito")){
       this.createCarrito();
     }
-    let texto = localStorage.getItem("carrito");
-    return JSON.parse(texto);
+    let carrito = localStorage.getItem("carrito");
+    return JSON.parse(carrito);
   }
 
   createCarrito(){

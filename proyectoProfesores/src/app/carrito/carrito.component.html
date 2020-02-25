@@ -1,14 +1,19 @@
-<table>
-    <th>Profesor</th>
-    <th>Actividad</th>
-    <th>Fecha</th>
-    <th>Precio</th>
-    <th>Eliminar</th>
-    <tr *ngFor="let clase of carrito">
-        <td> {{clase.kiTituloProfesor}} </td>
-        <td> {{clase.ksActividad}} </td>
-        <td> {{clase.kiFecha}} </td>
-        <td> {{clase.aiPrecio}} </td>
-        <td> <button class="btn btn-primary" (click)="borrar(clase.kiCodigo)">X</button></td>
-    </tr>
-</table>
+<ng-container *ngIf="carrito.length!=0; else sinCarrito">
+    <table>
+        <th>Profesor</th>
+        <th>Actividad</th>
+        <th>Fecha</th>
+        <th>Precio</th>
+        <th>Eliminar</th>
+        <tr *ngFor="let clase of carrito">
+            <td> {{clase.kiTituloProfesor}} </td>
+            <td> {{clase.ksActividad}} </td>
+            <td> {{clase.kiFecha}} </td>
+            <td> {{clase.aiPrecio}} </td>
+            <td> <button class="btn btn-primary" (click)="borrar(clase.kiCodigo)">X</button></td>
+        </tr>
+    </table>
+</ng-container>
+<ng-template #sinCarrito>
+    <h3>No hay elementos para mostrar</h3>
+</ng-template>
