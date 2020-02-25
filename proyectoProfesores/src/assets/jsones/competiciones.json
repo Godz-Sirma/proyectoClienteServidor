@@ -1,0 +1,29 @@
+[
+    {
+        "cbDisponible":true,
+        "kiCodigo":1111,
+        "asNombre":"nombre1",
+        "kiFecha":"11/11/11",
+        "asUbicacion":"ubicacion1",
+        "asGimnasio":"gimnasio1",
+        "aiCoste":21
+    },
+    {
+        "cbDisponible":false,
+        "kiCodigo":2222,
+        "asNombre":"nombre2",
+        "kiFecha":"22/2/22",
+        "asUbicacion":"ubicacion2",
+        "asGimnasio":"gimnasio2",
+        "aiCoste":10
+    },
+    {
+        "cbDisponible":true,
+        "kiCodigo":3333,
+        "asNombre":"nombre3",
+        "kiFecha":"3/3/33",
+        "asUbicacion":"ubicacion3",
+        "asGimnasio":"gimnasio3",
+        "aiCoste":33
+    }
+]
