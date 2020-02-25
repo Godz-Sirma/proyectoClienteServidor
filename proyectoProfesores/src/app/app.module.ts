@@ -1,5 +1,7 @@
 // -- Utils --
 import { NgModule } from '@angular/core';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -34,6 +36,7 @@ import { GestionarCarritoService } from '../servicios/gestionar-carrito.service'
   ],
   imports: [
     BrowserModule,
+    NgbModule,
     HttpClientModule,
     PrincipalModule,
     AppRoutingModule

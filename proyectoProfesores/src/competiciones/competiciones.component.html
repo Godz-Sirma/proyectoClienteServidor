@@ -6,11 +6,11 @@
     <thead>
       <tr>
         <th scope="col">Disponible</th>
-        <th scope="col">Nombre</th>
+        <th scope="col" sortable="nombre" (sort)="onSort($event)">Nombre</th>
         <th scope="col">Fecha</th>
-        <th scope="col">Ubicacion</th>
-        <th scope="col">Gimnasio</th>
-        <th scope="col">Coste</th>
+        <th scope="col" sortable="ubicacion" (sort)="onSort($event)">Ubicacion</th>
+        <th scope="col" sortable="gimnasio" (sort)="onSort($event)">Gimnasio</th>
+        <th scope="col" sortable="coste" (sort)="onSort($event)">Coste</th>
         <th scope="col">Inscripcion</th>
       </tr>
     </thead>
@@ -29,11 +29,10 @@
         <td>{{ competicion.kiFecha }}</td>
         <td>{{ competicion.asUbicacion }}</td>
         <td>{{ competicion.asGimnasio }}</td>
-        <td>{{ competicion.aiCoste | currency }}</td>
+        <td>{{ competicion.aiCoste | currency:"EUR" }}</td>
         <td> <button disabled class="btn btn-primary">Inscribete</button></td>
 
       </tr>
     </tbody>
     <!-- (click)="mostrarDetalles(competicion.kiCodigo)" -->
 </table>
-  
