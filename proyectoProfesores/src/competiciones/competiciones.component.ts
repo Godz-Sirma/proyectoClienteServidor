@@ -80,7 +80,6 @@ export class CompeticionesComponent implements OnInit {
       }
     });
 
-    // sorting countries
     if (direction === '') {
       this.listaCompeticiones = this.listaCompeticionesOriginal;
     } else {
