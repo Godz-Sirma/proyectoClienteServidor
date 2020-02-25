@@ -9,7 +9,7 @@ import { Sesiones } from '../../clases/sesiones';
 })
 export class CarritoComponent implements OnInit {
 
-  private carrito:Sesiones[]=[];
+  carrito:Sesiones[]=[];
   
 
   constructor(private GestionarCarrito:GestionarCarritoService) { }

@@ -11,7 +11,7 @@ import { GestionarSidemenuService } from '../../servicios/gestionar-sidemenu.ser
 })
 export class SidemenuComponent implements OnInit {
 
-  private listaSidemenu:Sidemenu[]=[];
+  listaSidemenu:Sidemenu[]=[];
   constructor(private gestionarSidemenu:GestionarSidemenuService) { }
 
   ngOnInit() {

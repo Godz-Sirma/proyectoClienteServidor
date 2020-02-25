@@ -12,8 +12,8 @@ import { ClasesProfe } from '../clases/clases-profe';
 export class ClasesProfeComponent implements OnInit {
 
   
-  private listaClases:ClasesProfe[]=[];
-  private listaClasesOriginal:ClasesProfe[]=[];
+  listaClases:ClasesProfe[]=[];
+  listaClasesOriginal:ClasesProfe[]=[];
 
   constructor(private gestionarClases:GestionarClasesProfeService,private gestionarFiltro:GestionarFiltroService ,private router:Router) { }
 

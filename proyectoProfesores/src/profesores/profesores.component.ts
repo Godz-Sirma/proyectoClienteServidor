@@ -11,8 +11,8 @@ import { Profesor } from '../clases/profesor';
 })
 export class ProfesoresComponent implements OnInit {
 
-  private listaProfes:Profesor[]=[];
-  private listaProfesOriginal:Profesor[]=[];
+  listaProfes:Profesor[]=[];
+  listaProfesOriginal:Profesor[]=[];
 
   constructor(private gestionarProfes:GestionarProfesoresService,private gestionarFiltro:GestionarFiltroService ,private router:Router) { }
 

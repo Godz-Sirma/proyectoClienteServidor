@@ -40,8 +40,8 @@ export class NgbdSortableHeader {
 })
 export class CompeticionesComponent implements OnInit {
 
-  private listaCompeticiones:Competicion[]=[];
-  private listaCompeticionesOriginal:Competicion[]=[];
+  listaCompeticiones:Competicion[]=[];
+  listaCompeticionesOriginal:Competicion[]=[];
 
   @ViewChildren(NgbdSortableHeader) headers: QueryList<NgbdSortableHeader>;
 

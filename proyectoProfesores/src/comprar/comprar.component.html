@@ -2,7 +2,7 @@
 
 <select name="profesores" id="profesores" (onchange="buscarActividades($event)")>
     <option value="predefinido">-------</option>
-    <option value={{profesor.kiTitulo}} *ngFor="let profesor of listaProfes" >{{profesor.asNombre}}</option>
+    <option value={{profesor.kiTitulo}} *ngFor="let profesor of listaProfesores" >{{profesor.asNombre}}</option>
 </select>
 <!-- *ngIf="isProfesorSeleccionado(profesor.kiTitulo)" -->
 <select name="actividades" id="actividades" (onchange="buscarProfesores($event)")>

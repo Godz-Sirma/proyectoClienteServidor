@@ -13,12 +13,12 @@ import { Actividades } from '../clases/actividades';
 })
 export class ComprarComponent implements OnInit {
 
-  private listaProfesores:Profesor[]=[];
-  private listaActividades:Actividades[]=[];
+  listaProfesores:Profesor[]=[];
+  listaActividades:Actividades[]=[];
 
   private actividadPasada:string="predefinido";
   private profesorPasado:string="predefinido";
-  private precio:number=0;
+  precio:number=0;
 
 
 
