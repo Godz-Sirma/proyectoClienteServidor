@@ -28,7 +28,7 @@ const routes: Routes = [
   {path:"listaActividades",component: ActividadesComponent},
   {path:"comprar/:kiTitulo/:ksNombre",component: ComprarComponent},
   {path:"carrito",component: CarritoComponent},
-  {path:"ayuda",component: AyudaComponent},
+  {path:"help",component: AyudaComponent},
   
   {path:"landingPage",component: LandingPageComponent},
   {path:"",redirectTo:"/landingPage" ,pathMatch:"full"}

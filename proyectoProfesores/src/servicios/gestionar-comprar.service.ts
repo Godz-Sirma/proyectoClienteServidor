@@ -15,6 +15,7 @@ export class GestionarComprarService {
   private jsonProfesoresEspecifico="http://localhost/Proyecto/profesoresEspecifico.php";
   private jsonActividadesGeneral="http://localhost/Proyecto/actividadesGeneral.php";
   private jsonActividadesEspecifico="http://localhost/Proyecto/actividadesEspecifico.php";
+  private jsonPrecio="http://localhost/Proyecto/precio.php";
 //http://localhost/Proyecto/profesor.php?kiTitulo=1
 
 //Busca todos los profes
@@ -32,6 +33,11 @@ export class GestionarComprarService {
 //Busca las actividades que tengan un profesor con ese kiTitulo
   getActividadesEspecifico(kiTitulo):Observable<Actividades[]>{
     return this.http.get<Actividades[]>(this.jsonActividadesEspecifico+"?kiTitulo="+kiTitulo);
+  }
+
+//Busca el precio de esa actividad con ese profesor
+  getPrecio(kiTitulo,ksNombre):Observable<number>{
+    return this.http.get<number>(this.jsonPrecio+"?kiTitulo="+kiTitulo+"&ksNombre="+ksNombre);
   }
 
 }

@@ -18,6 +18,7 @@ export class ComprarComponent implements OnInit {
 
   private actividadPasada:string="predefinido";
   private profesorPasado:string="predefinido";
+  private precio:number=0;
 
 
 
@@ -49,6 +50,22 @@ export class ComprarComponent implements OnInit {
       this.gestionarComprar.getProfesoresEspecifico(event.value).subscribe(datos=>this.listaProfesores=datos);
     }
     this.profesorPasado=event.target.value;
+  }
+
+  buscarPrecio(){
+    if(this.actividadPasada=="predefinido"||this.profesorPasado=="predefinido"){
+      this.precio=0;
+    }else{
+      this.gestionarComprar.getPrecio(this.profesorPasado,this.actividadPasada).subscribe(dato=>this.precio=dato);
+    }
+  }
+
+  reiniciar(){
+    this.actividadPasada="predefinido";
+    this.profesorPasado="predefinido";
+    this.buscarActividades;
+    this.buscarProfesores;
+    this.buscarPrecio;
   }
 
   comprar(){
