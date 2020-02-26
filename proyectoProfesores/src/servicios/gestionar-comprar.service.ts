@@ -11,10 +11,10 @@ export class GestionarComprarService {
 
   constructor(private http:HttpClient) { }
 
-  private jsonProfesoresGeneral="http://localhost/Proyecto/profesoresGeneral.json";
-  private jsonProfesoresEspecifico="http://localhost/Proyecto/profesoresEspecifico.php";
-  private jsonActividadesGeneral="http://localhost/Proyecto/actividadesGeneral.php";
-  private jsonActividadesEspecifico="http://localhost/Proyecto/actividadesEspecifico.php";
+  private jsonProfesoresGeneral="http://localhost/Proyecto/profesores.json";
+  private jsonProfesoresEspecifico="http://localhost/Proyecto/profesor.php";
+  private jsonActividadesGeneral="http://localhost/Proyecto/actividades.json";
+  private jsonActividadesEspecifico="http://localhost/Proyecto/actividad.php";
   private jsonPrecio="http://localhost/Proyecto/precio.php";
   private jsonId="http://localhost/Proyecto/id.php";
 //http://localhost/Proyecto/profesor.php?kiTitulo=1

@@ -5,7 +5,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Sesiones } from '../clases/sesiones';
 import { Profesor } from '../clases/profesor';
 import { Actividades } from '../clases/actividades';
-import { ClasesProfe } from '../clases/clases-profe';
 
 @Component({
   selector: 'app-comprar',
@@ -32,24 +31,41 @@ export class ComprarComponent implements OnInit {
       this.profesorPasado=param.kiTitulo;
     });
 
-    //this.buscarActividades(this.actividadPasada);
-    //this.buscarProfesores(this.profesorPasado);
+    this.getActividades(this.actividadPasada);
+    this.getProfesores(this.profesorPasado);
+  }
+
+  getActividades(param){
+    if(param=="predefinido"){
+      this.gestionarComprar.getActividadesGeneral().subscribe(datos=>this.listaActividades=datos);
+    }else{
+      this.gestionarComprar.getActividadesEspecifico(param).subscribe(datos=>this.listaActividades=datos);
+    }
   }
 
   buscarActividades(event){
+
     if(event.target.value=="predefinido"){
       this.gestionarComprar.getActividadesGeneral().subscribe(datos=>this.listaActividades=datos);
     }else{
-      this.gestionarComprar.getActividadesEspecifico(event.value).subscribe(datos=>this.listaActividades=datos);
+      this.gestionarComprar.getActividadesEspecifico(event.target.value).subscribe(datos=>this.listaActividades=datos);
     }
     this.actividadPasada=event.target.value;
+  }
+
+  getProfesores(param){
+    if(param=="predefinido"){
+      this.gestionarComprar.getProfesoresGeneral().subscribe(datos=>this.listaProfesores=datos);
+    }else{
+      this.gestionarComprar.getProfesoresEspecifico(param).subscribe(datos=>this.listaProfesores=datos);
+    }
   }
 
   buscarProfesores(event){
     if(event.target.value=="predefinido"){
       this.gestionarComprar.getProfesoresGeneral().subscribe(datos=>this.listaProfesores=datos);
     }else{
-      this.gestionarComprar.getProfesoresEspecifico(event.value).subscribe(datos=>this.listaProfesores=datos);
+      this.gestionarComprar.getProfesoresEspecifico(event.target.value).subscribe(datos=>this.listaProfesores=datos);
     }
     this.profesorPasado=event.target.value;
   }
@@ -65,8 +81,8 @@ export class ComprarComponent implements OnInit {
   reiniciar(){
     this.actividadPasada="predefinido";
     this.profesorPasado="predefinido";
-    this.buscarActividades(this.actividadPasada);
-    this.buscarProfesores(this.profesorPasado);
+    this.getActividades(this.actividadPasada);
+    this.getProfesores(this.profesorPasado);
     this.buscarPrecio();
   }
 
