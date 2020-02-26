@@ -1,6 +1,7 @@
 export class Sesiones {
-    /**kiCodigo:number;*/ /**No es necesario, se pon en bbdd */
-    kiClase:number; /**Apunta a la relacion profe-actividad */
+    /**kiCodigo:number;*/ /**No es necesario, se pone en bbdd */
+    /**Apunta a la relacion profe-actividad */
+    kiClase:number; 
     kiFecha:string;
     aiPrecio:number;
 }

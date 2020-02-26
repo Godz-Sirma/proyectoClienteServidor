@@ -89,12 +89,13 @@ export class ComprarComponent implements OnInit {
   comprar(){
 
     if(this.actividadPasada=="predefinido"||this.profesorPasado=="predefinido"){
-
+      alert("Falta rellenar algun campo");
     }else{
-      let sesion:Sesiones;
-      sesion.kiClase=this.getIdClase();
+      let sesion:Sesiones={"kiClase":1,"aiPrecio":1,"kiFecha":""};
+
       sesion.aiPrecio=this.precio;
       sesion.kiFecha=this.fecha;
+      sesion.kiClase=this.getIdClase();
       this.gestionarCarrito.addToCarrito(sesion);
   
       this.router.navigate(["carrito"]);

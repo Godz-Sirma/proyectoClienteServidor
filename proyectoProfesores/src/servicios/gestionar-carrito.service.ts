@@ -24,16 +24,17 @@ export class GestionarCarritoService {
     localStorage.removeItem("carrito");
   }
 
-  addToCarrito(clase:Sesiones){
+  addToCarrito(sesion:Sesiones){
     let carrito = this.getCarrito();
-    carrito.push(clase);
+    carrito.push(sesion);
 
-    localStorage.setItem("carrito",carrito.JSON.stringify());
-    return clase;
+    localStorage.setItem("carrito",JSON.stringify(carrito));
+    return sesion;
   }
 
   deleteFromCarrito(position){
-    let carrito = this.getCarrito();
-    return carrito.splice(position,1);
+    let carrito =[]
+    carrito= this.getCarrito();
+    carrito.splice(position,1);
   }
 }
