@@ -8,7 +8,7 @@ export class GestionarCarritoService {
 
   constructor() { }
 
-  getCarrito(){
+  getCarrito():Sesiones[]{
     if(!localStorage.getItem("carrito")){
       this.createCarrito();
     }
@@ -34,8 +34,14 @@ export class GestionarCarritoService {
 
   deleteFromCarrito(id){
     let carrito = this.getCarrito();
-    let position=carrito.indexOf(id);
+    let position = 0;
+    for (let i = 0; i < carrito.length; i++) {
+      if(carrito[i].ksCodigo==id){
+        position=i;
+      }
+    }
+
     carrito.splice(position,1);
-    localStorage.setItem("carrito",carrito);
+    localStorage.setItem("carrito",JSON.stringify(carrito));
   }
 }
