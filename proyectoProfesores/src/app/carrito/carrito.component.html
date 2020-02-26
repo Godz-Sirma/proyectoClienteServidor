@@ -5,12 +5,13 @@
         <th>Fecha</th>
         <th>Precio</th>
         <th>Eliminar</th>
-        <tr *ngFor="let clase of carrito;">
+        <tr *ngFor="let clase of carrito; index as i">
+            <td> {{i}} </td>
             <td> {{clase.kiTituloProfesor}} </td>
             <td> {{clase.ksActividad}} </td>
             <td> {{clase.kiFecha}} </td>
             <td> {{clase.aiPrecio}} </td>
-            <td> <button class="btn btn-primary" (click)="borrarSesion(carrito.)">X</button></td>
+            <td> <button class="btn btn-primary" (click)="borrarSesion(i)">X</button></td>
         </tr>
     </table>
 </ng-container>

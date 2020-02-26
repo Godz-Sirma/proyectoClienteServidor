@@ -33,8 +33,8 @@ export class GestionarCarritoService {
   }
 
   deleteFromCarrito(position){
-    let carrito =[]
-    carrito= this.getCarrito();
+    let carrito = this.getCarrito();
     carrito.splice(position,1);
+    localStorage.setItem("carrito",carrito);
   }
 }
