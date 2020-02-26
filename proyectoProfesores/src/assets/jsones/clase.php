@@ -1,0 +1,32 @@
+<?php
+    if($_GET['kiCodigo']==1111){
+        echo'
+        {
+            "kiCodigo":1111,
+            "ksTituloProfe":"Paco",
+            "ksActividad":"Gimnasia",
+            "aiPrecio":20
+        }
+        ';
+    }
+    if($_GET['kiCodigo']==2222){
+        print'
+        {
+            "kiCodigo":2222,
+            "ksTituloProfe":"Alberto",
+            "ksActividad":"Running",
+            "aiPrecio":12
+        }
+        ';
+    }
+    if($_GET['kiCodigo']==3333){
+        print'
+        {
+            "kiCodigo":3333,
+            "ksTituloProfe":"dani",
+            "ksActividad":"Yoga",
+            "aiPrecio":50
+        }
+        ';
+    }
+?>

@@ -1,0 +1,27 @@
+<?php
+    if($_GET['ksNombre']=="yoga"){
+        print'
+        {
+            "ksNombre":"yoga",
+            "aaProfesores":["lolo","lulu"]
+        }
+        ';
+    }
+    if($_GET['ksNombre']=="footing"){
+        print'
+        {
+            "ksNombre":"footing",
+            "aaProfesores":["lala","lele"]
+        }
+        ';
+    }
+    if($_GET['ksNombre']=="bodybump"){
+        print'
+        {
+            "ksNombre":"bodybump",
+            "aaProfesores":["lili"]
+        }
+        ';
+    }
+
+?>

@@ -1,0 +1,26 @@
+[
+{
+    "nombre":"Ver Profes",
+    "link":"/listaProfes"
+},
+{
+    "nombre":"Ver Clases",
+    "link":"/listaClases"
+},
+{
+    "nombre":"Ver Actividades",
+    "link":"/listaActividades"
+},
+{
+    "nombre":"Comprar",
+    "link":"/comprar/predefinido/predefinido"
+},
+{
+    "nombre":"Competiciones",
+    "link":"/listaCompeticiones"
+},
+{
+    "nombre":"Ayuda",
+    "link":"/help"
+}
+]
