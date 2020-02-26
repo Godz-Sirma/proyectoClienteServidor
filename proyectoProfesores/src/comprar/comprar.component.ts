@@ -5,6 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Sesiones } from '../clases/sesiones';
 import { Profesor } from '../clases/profesor';
 import { Actividades } from '../clases/actividades';
+import { ClasesProfe } from '../clases/clases-profe';
 
 @Component({
   selector: 'app-comprar',
@@ -15,9 +16,10 @@ export class ComprarComponent implements OnInit {
 
   listaProfesores:Profesor[]=[];
   listaActividades:Actividades[]=[];
-
-  private actividadPasada:string="predefinido";
-  private profesorPasado:string="predefinido";
+  
+  actividadPasada:string="predefinido";
+  profesorPasado:string="predefinido";
+  fecha:string="";
   precio:number=0;
 
 
@@ -30,8 +32,8 @@ export class ComprarComponent implements OnInit {
       this.profesorPasado=param.kiTitulo;
     });
 
-    this.buscarActividades(this.actividadPasada);
-    this.buscarProfesores(this.profesorPasado);
+    //this.buscarActividades(this.actividadPasada);
+    //this.buscarProfesores(this.profesorPasado);
   }
 
   buscarActividades(event){
@@ -63,17 +65,30 @@ export class ComprarComponent implements OnInit {
   reiniciar(){
     this.actividadPasada="predefinido";
     this.profesorPasado="predefinido";
-    this.buscarActividades;
-    this.buscarProfesores;
-    this.buscarPrecio;
+    this.buscarActividades(this.actividadPasada);
+    this.buscarProfesores(this.profesorPasado);
+    this.buscarPrecio();
   }
 
   comprar(){
-    let sesion:Sesiones;
-    sesion;
-    this.gestionarCarrito.addToCarrito(sesion);
 
-    this.router.navigate(["carrito"]);
+    if(this.actividadPasada=="predefinido"||this.profesorPasado=="predefinido"){
+
+    }else{
+      let sesion:Sesiones;
+      sesion.kiClase=this.getIdClase();
+      sesion.aiPrecio=this.precio;
+      sesion.kiFecha=this.fecha;
+      this.gestionarCarrito.addToCarrito(sesion);
+  
+      this.router.navigate(["carrito"]);
+    }
+  }
+
+  getIdClase(){
+    let id=0;
+    this.gestionarComprar.getPrecio(this.profesorPasado,this.actividadPasada).subscribe(dato=>id=dato);
+    return id;
   }
 
 }
