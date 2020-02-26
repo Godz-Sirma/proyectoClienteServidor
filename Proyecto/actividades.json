@@ -1,0 +1,16 @@
+[
+    {
+        "ksNombre":"yoga",
+        "aaProfesores":["lolo","lulu"]
+    }
+    ,
+    {
+        "ksNombre":"footing",
+        "aaProfesores":["lala","lele"]
+    }
+    ,
+    {
+        "ksNombre":"bodybump",
+        "aaProfesores":["lili"]
+    }
+]

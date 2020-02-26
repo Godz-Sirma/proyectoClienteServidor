@@ -12,7 +12,7 @@ export class GestionarComprarService {
   constructor(private http:HttpClient) { }
 
   private jsonProfesoresGeneral="http://localhost/Proyecto/profesores.json";
-  private jsonProfesoresEspecifico="http://localhost/Proyecto/profesor.php";
+  private jsonProfesoresEspecifico="http://localhost/Proyecto/profesorComprar.php";
   private jsonActividadesGeneral="http://localhost/Proyecto/actividades.json";
   private jsonActividadesEspecifico="http://localhost/Proyecto/actividad.php";
   private jsonPrecio="http://localhost/Proyecto/precio.php";

@@ -8,12 +8,16 @@
     "link":"/listaClases"
 },
 {
-    "nombre":"Merchandising",
-    "link":"/merchandising"
+    "nombre":"Ver Actividades",
+    "link":"/listaActividades"
+},
+{
+    "nombre":"Comprar",
+    "link":"/comprar/predefinido/predefinido"
 },
 {
     "nombre":"Competiciones",
-    "link":"/competiciones"
+    "link":"/listaCompeticiones"
 },
 {
     "nombre":"Ayuda",

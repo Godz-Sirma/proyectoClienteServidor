@@ -20,8 +20,8 @@ export class ComprarComponent implements OnInit {
   profesorPasado:string="predefinido";
   fecha:string="";
   precio:number=0;
-
-
+  nombreProfesor:string="";
+  id:number=0;
 
   constructor(private router:Router, private gestionarComprar:GestionarComprarService, private activatedRoute:ActivatedRoute, private gestionarCarrito:GestionarCarritoService) { }
 
@@ -33,6 +33,8 @@ export class ComprarComponent implements OnInit {
 
     this.getActividades(this.actividadPasada);
     this.getProfesores(this.profesorPasado);
+    this.buscarPrecio();
+    this.getIdClase();
   }
 
   getActividades(param){
@@ -41,6 +43,8 @@ export class ComprarComponent implements OnInit {
     }else{
       this.gestionarComprar.getActividadesEspecifico(param).subscribe(datos=>this.listaActividades=datos);
     }
+    this.buscarPrecio();
+    this.getIdClase();
   }
 
   buscarActividades(event){
@@ -51,6 +55,8 @@ export class ComprarComponent implements OnInit {
       this.gestionarComprar.getActividadesEspecifico(event.target.value).subscribe(datos=>this.listaActividades=datos);
     }
     this.profesorPasado=event.target.value;
+    this.buscarPrecio();
+    this.getIdClase();
   }
 
   getProfesores(param){
@@ -59,6 +65,8 @@ export class ComprarComponent implements OnInit {
     }else{
       this.gestionarComprar.getProfesoresEspecifico(param).subscribe(datos=>this.listaProfesores=datos);
     }
+    this.buscarPrecio();
+    this.getIdClase();
   }
 
   buscarProfesores(event){
@@ -68,6 +76,8 @@ export class ComprarComponent implements OnInit {
       this.gestionarComprar.getProfesoresEspecifico(event.target.value).subscribe(datos=>this.listaProfesores=datos);
     }
     this.actividadPasada=event.target.value;
+    this.buscarPrecio();
+    this.getIdClase();
   }
 
   buscarPrecio(){
@@ -84,29 +94,30 @@ export class ComprarComponent implements OnInit {
     this.getActividades(this.actividadPasada);
     this.getProfesores(this.profesorPasado);
     this.buscarPrecio();
+    this.getIdClase();
   }
 
   comprar(){
 
-    if(this.actividadPasada=="predefinido"||this.profesorPasado=="predefinido"){
+    if(this.actividadPasada=="predefinido"||this.profesorPasado=="predefinido"||this.id==0){
       alert("Falta rellenar algun campo");
     }else{
-      let sesion:Sesiones={"kiClase":1,"aiPrecio":1,"kiFecha":""};
-
+      let sesion:Sesiones={"ksCodigo":"codigo","kiClase":1,"aiPrecio":1,"kiFecha":"fecha"};
+      sesion.ksCodigo="";
+      sesion.ksCodigo+=this.id+this.fecha+this.precio;
       sesion.aiPrecio=this.precio;
       sesion.kiFecha=this.fecha;
-      sesion.kiClase=this.getIdClase();
+      sesion.kiClase=this.id;
       this.gestionarCarrito.addToCarrito(sesion);
       console.log(sesion);
   
-      //this.router.navigate(["carrito"]);
+      this.router.navigate(["carrito"]);
     }
   }
 
   getIdClase(){
-    let id=0;
-    this.gestionarComprar.getPrecio(this.profesorPasado,this.actividadPasada).subscribe(dato=>id=dato);
-    return id;
+    this.gestionarComprar.getIdClase(this.profesorPasado,this.actividadPasada).subscribe(dato=>this.id=dato);
+    return this.id;
   }
 
 }

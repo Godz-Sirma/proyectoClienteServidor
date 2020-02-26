@@ -1,0 +1,31 @@
+[
+    {
+        "cbDisponible":true,
+        "kiCodigo":1111,
+        "asNombre":"Batalla del dolor",
+        "kiFecha":"33/33/33",
+        "asUbicacion":"Calle de los puños",
+        "asGimnasio":"Bíceps Avenue",
+        "aiCoste":10
+    }
+    ,
+    {
+        "cbDisponible":false,
+        "kiCodigo":2222,
+        "asNombre":"Disputa de las collejas",
+        "kiFecha":"11/11/11",
+        "asUbicacion":"Plaza de las patadas",
+        "asGimnasio":"Capón FrontFlip",
+        "aiCoste":12
+    }
+    ,
+    {
+        "cbDisponible":true,
+        "kiCodigo":3333,
+        "asNombre":"Contienda de los puntapiés",
+        "kiFecha":"22/22/22",
+        "asUbicacion":"Avenida de las castañas",
+        "asGimnasio":"Almendra Street",
+        "aiCoste":25
+    }
+]

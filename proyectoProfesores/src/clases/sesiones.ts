@@ -1,5 +1,5 @@
 export class Sesiones {
-    /**kiCodigo:number;*/ /**No es necesario, se pone en bbdd */
+    ksCodigo:string;
     /**Apunta a la relacion profe-actividad */
     kiClase:number; 
     kiFecha:string;

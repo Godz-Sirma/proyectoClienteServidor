@@ -1,0 +1,20 @@
+[
+    {
+        "kiCodigo":1111,
+        "ksTituloProfe":"Paco",
+        "ksActividad":"Gimnasia",
+        "aiPrecio":20
+    },
+    {
+        "kiCodigo":2222,
+        "ksTituloProfe":"Alberto",
+        "ksActividad":"Running",
+        "aiPrecio":12
+    },
+    {
+        "kiCodigo":3333,
+        "ksTituloProfe":"dani",
+        "ksActividad":"Yoga",
+        "aiPrecio":50
+    }
+]

@@ -32,8 +32,9 @@ export class GestionarCarritoService {
     return sesion;
   }
 
-  deleteFromCarrito(position){
+  deleteFromCarrito(id){
     let carrito = this.getCarrito();
+    let position=carrito.indexOf(id);
     carrito.splice(position,1);
     localStorage.setItem("carrito",carrito);
   }

@@ -12,6 +12,8 @@
     <option value="predefinido">-------</option>
     <option value={{actividad.ksNombre}} *ngFor="let actividad of listaActividades" >{{actividad.ksNombre}}</option>
 </select>
+
+<span *ngIf="precio!=0">Precio = {{precio}}</span>
 <!-- 
 *ngIf="isActividadSeleccionada(actividad.ksNombre)" -->
 <button (click)="comprar()">Comprar</button><button (click)="reiniciar()">Reiniciar</button>

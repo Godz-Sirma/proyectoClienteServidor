@@ -1,6 +1,7 @@
 <?php
-    if($_GET['kiTitulo']==1){
+    if($_GET['ksNombre']=="yoga"){
         echo'
+        [
             {
                 "kiTitulo":1,
                 "xiDni":1111,
@@ -11,10 +12,12 @@
                 "aiEdad":28,
                 "asMensaje":"Eres muy grande y bello"
             }
+        ]
         ';
     }
-    if($_GET['kiTitulo']==2){
+    if($_GET['ksNombre']=="footing"){
         print'
+        [
             {
                 "kiTitulo":2,
                 "xiDni":2222,
@@ -25,10 +28,12 @@
                 "aiEdad":22,
                 "asMensaje":"Tus piernas van a parecer tocones"
             }
+        ]
         ';
     }
-    if($_GET['kiTitulo']==3){
+    if($_GET['ksNombre']=="bodybump"){
         print'
+        [
             {
                 "kiTitulo":3,
                 "xiDni":3333,
@@ -39,6 +44,7 @@
                 "aiEdad":25,
                 "asMensaje":"JAJA salu2"
             }
+        ]
         ';
     }
 ?>
