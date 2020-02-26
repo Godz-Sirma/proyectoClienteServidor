@@ -50,7 +50,7 @@ export class ComprarComponent implements OnInit {
     }else{
       this.gestionarComprar.getActividadesEspecifico(event.target.value).subscribe(datos=>this.listaActividades=datos);
     }
-    this.actividadPasada=event.target.value;
+    this.profesorPasado=event.target.value;
   }
 
   getProfesores(param){
@@ -67,7 +67,7 @@ export class ComprarComponent implements OnInit {
     }else{
       this.gestionarComprar.getProfesoresEspecifico(event.target.value).subscribe(datos=>this.listaProfesores=datos);
     }
-    this.profesorPasado=event.target.value;
+    this.actividadPasada=event.target.value;
   }
 
   buscarPrecio(){
@@ -97,8 +97,9 @@ export class ComprarComponent implements OnInit {
       sesion.kiFecha=this.fecha;
       sesion.kiClase=this.getIdClase();
       this.gestionarCarrito.addToCarrito(sesion);
+      console.log(sesion);
   
-      this.router.navigate(["carrito"]);
+      //this.router.navigate(["carrito"]);
     }
   }
 
