@@ -29,6 +29,17 @@ export class ActividadesComponent implements OnInit {
     );
   }
 
+  ordenarNombre(){
+    this.listaActividades.sort(function(a,b){
+      if(a.ksNombre>b.ksNombre){
+        return 1;
+      }else{
+        return -1;
+      }
+      return 0;
+    });
+  }
+
   filtrar(event){
     this.gestionarFiltro.cambiarFiltro(event.target.value.toLocaleLowerCase());
   }

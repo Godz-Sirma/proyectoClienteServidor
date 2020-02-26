@@ -6,11 +6,11 @@
         <th>Precio</th>
         <th>Eliminar</th>
         <tr *ngFor="let sesion of carrito; index as i">
-            <td> {{sesion.kiTituloProfesor}} </td>
-            <td> {{sesion.ksActividad}} </td>
+            <td> {{sesion.aiProfesor}} </td>
+            <td> {{sesion.asActividad}} </td>
             <td> {{sesion.kiFecha}} </td>
             <td> {{sesion.aiPrecio}} </td>
-            <td> <button class="btn btn-primary" (click)="borrarSesion(sesion.ksCodigo)">{{sesion.ksCodigo}}</button></td>
+            <td> <button class="btn btn-primary" (click)="borrarSesion(sesion.ksCodigo)">X</button></td>
         </tr>
     </table>
 </ng-container>

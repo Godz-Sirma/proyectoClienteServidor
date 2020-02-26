@@ -31,6 +31,17 @@ export class ProfesoresComponent implements OnInit {
     );
   }
 
+  ordenarNombre(){
+    this.listaProfes.sort(function(a,b){
+      if(a.asNombre>b.asNombre){
+        return 1;
+      }else{
+        return -1;
+      }
+      return 0;
+    });
+  }
+
   getProfes(){
     this.gestionarProfes.getProfesores().subscribe(datos=> 
       {

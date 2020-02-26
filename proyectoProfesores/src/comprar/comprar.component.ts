@@ -101,12 +101,14 @@ export class ComprarComponent implements OnInit {
     if(this.actividadPasada=="predefinido"||this.profesorPasado=="predefinido"||this.id==0){
       alert("Falta rellenar algun campo");
     }else{
-      let sesion:Sesiones={"ksCodigo":"codigo","kiClase":1,"aiPrecio":1,"kiFecha":"fecha"};
+      let sesion:Sesiones={"aiProfesor":"","asActividad":"actividad","ksCodigo":"codigo","kiClase":1,"aiPrecio":1,"kiFecha":"fecha"};
       sesion.ksCodigo="";
       sesion.ksCodigo+=this.id+this.fecha+this.precio+Date.now();
       sesion.aiPrecio=this.precio;
       sesion.kiFecha=this.fecha;
       sesion.kiClase=this.id;
+      sesion.aiProfesor=this.profesorPasado;
+      sesion.asActividad=this.actividadPasada;
       console.log(sesion);
       this.gestionarCarrito.addToCarrito(sesion);
       

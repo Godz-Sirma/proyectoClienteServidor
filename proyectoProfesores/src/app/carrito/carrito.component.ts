@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GestionarCarritoService } from '../../servicios/gestionar-carrito.service';
 import { Sesiones } from '../../clases/sesiones';
+import { Actividades } from '../../clases/actividades';
+import { Profesor } from '../../clases/profesor';
 
 @Component({
   selector: 'app-carrito',
@@ -10,7 +12,6 @@ import { Sesiones } from '../../clases/sesiones';
 export class CarritoComponent implements OnInit {
 
   carrito:Sesiones[]=[];
-  
 
   constructor(private GestionarCarrito:GestionarCarritoService) { }
 

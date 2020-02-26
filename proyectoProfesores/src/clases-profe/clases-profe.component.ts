@@ -32,6 +32,34 @@ export class ClasesProfeComponent implements OnInit {
     );
   }
 
+  ordenarNombre(){
+    this.listaClases.sort(function(a,b){
+      if(a.ksTituloProfe>b.ksTituloProfe){
+        return 1;
+      }else{
+        return -1;
+      }
+      return 0;
+    });
+  }
+
+  ordenarActividad(){
+    this.listaClases.sort(function(a,b){
+      if(a.ksActividad>b.ksActividad){
+        return 1;
+      }else{
+        return -1;
+      }
+      return 0;
+    });
+  }
+
+  ordenarPrecio(){
+    this.listaClases.sort(function(a,b){
+      return a.aiPrecio-b.aiPrecio;
+    });
+  }
+
   getClases(){
     this.gestionarClases.getClases().subscribe(datos=> 
       {

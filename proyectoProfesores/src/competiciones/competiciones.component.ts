@@ -62,6 +62,45 @@ export class CompeticionesComponent implements OnInit {
     );
   }
 
+  ordenarNombre(){
+    this.listaCompeticiones.sort(function(a,b){
+      if(a.asNombre>b.asNombre){
+        return 1;
+      }else{
+        return -1;
+      }
+      return 0;
+    });
+  }
+
+  ordenarUbicacion(){
+    this.listaCompeticiones.sort(function(a,b){
+      if(a.asUbicacion>b.asUbicacion){
+        return 1;
+      }else{
+        return -1;
+      }
+      return 0;
+    });
+  }
+
+  ordenarGimnasio(){
+    this.listaCompeticiones.sort(function(a,b){
+      if(a.asGimnasio>b.asGimnasio){
+        return 1;
+      }else{
+        return -1;
+      }
+      return 0;
+    });
+  }
+
+  ordenarPrecio(){
+    this.listaCompeticiones.sort(function(a,b){
+      return a.aiCoste-b.aiCoste;
+    });
+  }
+  
   getCompeticiones(){
     this.gestionarCompeticiones.getCompeticiones().subscribe(datos=> 
       {

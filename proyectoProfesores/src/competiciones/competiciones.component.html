@@ -1,6 +1,11 @@
-
 <h1>ATENCION</h1><h3>Esto se trata solo de un panel informativo, las inscripciones a las competiciones están desabilitadas por el momento</h3>
 <p>Buscar : <input type="text" name="filtro" (keyup)="filtrar($event)">. (Ten en cuenta que buscara por <strong>Nombre, Ubicacion y Gimnasio.)</strong> </p>
+<button class="btn btn-primary" (click)="ordenarNombre()">Ordenar por nombre</button>
+<button class="btn btn-primary" (click)="ordenarUbicacion()">Ordenar por ubicacion</button>
+<button class="btn btn-primary" (click)="ordenarGimnasio()">Ordenar por gimnasio</button>
+<button class="btn btn-primary" (click)="ordenarPrecio()">Ordenar por precio</button>
+
+
 
  <table class="table table-striped text-center">
     <thead>

@@ -1,4 +1,8 @@
-<p>Buscar: <input type="text" name="filtro" (keyup)="filtrar($event)">.
+<p>Buscar: <input type="text" name="filtro" (keyup)="filtrar($event)">
+
+<button class="btn btn-primary" (click)="ordenarNombre()">Ordenar por nombre</button>
+<button class="btn btn-primary" (click)="ordenarActividad()">Ordenar por actividad</button>
+<button class="btn btn-primary" (click)="ordenarPrecio()">Ordenar por precio</button>
 
  <table class="table table-striped text-center">
     <thead>

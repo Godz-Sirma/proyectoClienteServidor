@@ -1,5 +1,5 @@
 <p>Buscar: <input type="text" name="filtro" (keyup)="filtrar($event)"></p>
-
+<button class="btn btn-primary" (click)="ordenarNombre()">Ordenar por nombre</button>
 
 <div class="card-deck">
     <div class="card text-center" style="width: 18rem;" *ngFor="let profesor of listaProfes">
