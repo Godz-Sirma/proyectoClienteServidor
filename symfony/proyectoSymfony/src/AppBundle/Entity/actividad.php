@@ -3,14 +3,15 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * actividad
+ * Actividad
  *
  * @ORM\Table(name="actividad")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\actividadRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ActividadRepository")
  */
-class actividad
+class Actividad
 {
     /**
      * @var int
@@ -22,32 +23,41 @@ class actividad
     private $id;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="ksnombre", type="string", length=255, unique=true)
+     * @ORM\OneToMany(targetEntity="Clase", mappedBy="xactividad")
+     */
+    private $ksnombre;
+
+    public function __construct(){
+        $this->ksnombre=new ArrayCollection();
+    }
+
+    public function __toString(){
+        return $this->ksnombre;
+    }
+
+    public function addKsnombre($ksnombre){
+        $this->ksnombre[]=$ksnombre;
+    }
+
+    
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ascategoria", type="string", length=255)
+     * 
+     */
+    private $ascategoria;
+
+    /**
      * @var int
      *
-     * @ORM\Column(name="kiCodigo", type="integer", unique=true)
+     * @ORM\Column(name="aigrupoedad", type="integer")
      */
-    private $kiCodigo;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="asNombre", type="string", length=255, unique=true)
-     */
-    private $asNombre;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="asCategoria", type="string", length=255)
-     */
-    private $asCategoria;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="aiGrupoEdad", type="string", length=255)
-     */
-    private $aiGrupoEdad;
+    private $aigrupoedad;
 
 
     /**
@@ -61,99 +71,75 @@ class actividad
     }
 
     /**
-     * Set kiCodigo
+     * Set ksnombre
      *
-     * @param integer $kiCodigo
+     * @param string $ksnombre
      *
-     * @return actividad
+     * @return Actividad
      */
-    public function setKiCodigo($kiCodigo)
+    public function setKsnombre($ksnombre)
     {
-        $this->kiCodigo = $kiCodigo;
+        $this->ksnombre = $ksnombre;
 
         return $this;
     }
 
     /**
-     * Get kiCodigo
+     * Get ksnombre
+     *
+     * @return string
+     */
+    public function getKsnombre()
+    {
+        return $this->ksnombre;
+    }
+
+    /**
+     * Set ascategoria
+     *
+     * @param string $ascategoria
+     *
+     * @return Actividad
+     */
+    public function setAscategoria($ascategoria)
+    {
+        $this->ascategoria = $ascategoria;
+
+        return $this;
+    }
+
+    /**
+     * Get ascategoria
+     *
+     * @return string
+     */
+    public function getAscategoria()
+    {
+        return $this->ascategoria;
+    }
+
+    /**
+     * Set aigrupoedad
+     *
+     * @param integer $aigrupoedad
+     *
+     * @return Actividad
+     */
+    public function setAigrupoedad($aigrupoedad)
+    {
+        $this->aigrupoedad = $aigrupoedad;
+
+        return $this;
+    }
+
+    /**
+     * Get aigrupoedad
      *
      * @return int
      */
-    public function getKiCodigo()
+    public function getAigrupoedad()
     {
-        return $this->kiCodigo;
-    }
-
-    /**
-     * Set asNombre
-     *
-     * @param string $asNombre
-     *
-     * @return actividad
-     */
-    public function setAsNombre($asNombre)
-    {
-        $this->asNombre = $asNombre;
-
-        return $this;
-    }
-
-    /**
-     * Get asNombre
-     *
-     * @return string
-     */
-    public function getAsNombre()
-    {
-        return $this->asNombre;
-    }
-
-    /**
-     * Set asCategoria
-     *
-     * @param string $asCategoria
-     *
-     * @return actividad
-     */
-    public function setAsCategoria($asCategoria)
-    {
-        $this->asCategoria = $asCategoria;
-
-        return $this;
-    }
-
-    /**
-     * Get asCategoria
-     *
-     * @return string
-     */
-    public function getAsCategoria()
-    {
-        return $this->asCategoria;
-    }
-
-    /**
-     * Set aiGrupoEdad
-     *
-     * @param string $aiGrupoEdad
-     *
-     * @return actividad
-     */
-    public function setAiGrupoEdad($aiGrupoEdad)
-    {
-        $this->aiGrupoEdad = $aiGrupoEdad;
-
-        return $this;
-    }
-
-    /**
-     * Get aiGrupoEdad
-     *
-     * @return string
-     */
-    public function getAiGrupoEdad()
-    {
-        return $this->aiGrupoEdad;
+        return $this->aigrupoedad;
     }
 }
 
