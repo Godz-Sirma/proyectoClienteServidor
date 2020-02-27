@@ -101,7 +101,7 @@ class ActividadController extends Controller
     /**
      * Deletes a actividad entity.
      *
-     * @Route("/{id}", name="actividad_delete")
+     * @Route("/{id}/delete", name="actividad_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Actividad $actividad)

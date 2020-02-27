@@ -3,6 +3,9 @@
 {% block body %}
     <h1>Profesors list</h1>
 
+    <div><a href="{{ path('profesor_ordenar', { 'campo': 'xiDni', 'direccion':'DESC' }) }}">Ordenar dni Descendente</a></div>
+    <div><a href="{{ path('profesor_ordenar', { 'campo': 'xiDni', 'direccion':'ASC' }) }}">Ordenar dni Ascendente</a></div>
+
     <table>
         <thead>
             <tr>
@@ -40,4 +43,5 @@
             <a href="{{ path('profesor_new') }}">Create a new profesor</a>
         </li>
     </ul>
+    <p><a href="http://localhost:8000/">Volver al menu principal</a></p>
 {% endblock %}

@@ -101,7 +101,7 @@ class ClaseController extends Controller
     /**
      * Deletes a clase entity.
      *
-     * @Route("/{id}", name="clase_delete")
+     * @Route("/{id}/delete", name="clase_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Clase $clase)

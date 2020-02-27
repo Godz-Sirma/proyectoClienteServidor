@@ -50,6 +50,8 @@ class Sesion
      * @var int
      *
      * @ORM\Column(name="xprecio", type="integer")
+     * @ORM\ManyToOne(targetEntity="Clase", inversedBy="asprecio")
+     * @ORM\JoinColumn(name="xprecio",referencedColumnName="id")
      */
     private $xprecio;
 

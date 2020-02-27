@@ -39,7 +39,7 @@ class UsuariosController extends Controller
      */
     public function newAction(Request $request)
     {
-        $usuario = new Usuario();
+        $usuario = new Usuarios();
         $form = $this->createForm('AppBundle\Form\UsuariosType', $usuario);
         $form->handleRequest($request);
 
@@ -101,7 +101,7 @@ class UsuariosController extends Controller
     /**
      * Deletes a usuario entity.
      *
-     * @Route("/{id}", name="usuarios_delete")
+     * @Route("/{id}/delete", name="usuarios_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Usuarios $usuario)
@@ -132,5 +132,22 @@ class UsuariosController extends Controller
             ->setMethod('DELETE')
             ->getForm()
         ;
+    }
+
+    /**
+     * Finds and displays a usuarios entity.
+     *
+     * @Route("index/{campo}/{direccion}", name="usuarios_ordenar")
+     * @Method("GET")
+     */
+    public function ordenar( $campo, $direccion)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $usuarios=$em->getRepository("AppBundle:Usuarios")
+        ->findBy(array(),array($campo=>$direccion));
+        
+        return $this->render('usuarios/index.html.twig', array(
+            'usuarios' => $usuarios,
+        ));
     }
 }

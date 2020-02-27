@@ -44,6 +44,7 @@ class Clase
      * @var int
      *
      * @ORM\Column(name="asprecio", type="integer")
+     * @ORM\OneToMany(targetEntity="Sesion", mappedBy="xprecio")
      */
     private $asprecio;
 

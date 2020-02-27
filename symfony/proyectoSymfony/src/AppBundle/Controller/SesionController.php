@@ -101,7 +101,7 @@ class SesionController extends Controller
     /**
      * Deletes a sesion entity.
      *
-     * @Route("/{id}", name="sesion_delete")
+     * @Route("/{id}/delete", name="sesion_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Sesion $sesion)

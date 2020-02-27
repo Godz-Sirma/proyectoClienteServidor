@@ -4,6 +4,12 @@
     <h1>Usuarios list</h1>
 
     <table>
+        <tr> <td><a href="{{ path('usuarios_ordenar', { 'campo': 'asapellido', 'direccion':'DESC' }) }}">Ordenar apellido Descendente</a></td> <td><a href="{{ path('usuarios_ordenar', { 'campo': 'asapellido', 'direccion':'ASC' }) }}">Ordenar apellido Ascendente</a></td></tr>
+        <tr> <td><a href="{{ path('usuarios_ordenar', { 'campo': 'asnombre', 'direccion':'DESC' }) }}">Ordenar nombre Descendente</a></td> <td><a href="{{ path('usuarios_ordenar', { 'campo': 'asnombre', 'direccion':'ASC' }) }}">Ordenar nombre Ascendente</a></td></tr>
+        <tr> <td><a href="{{ path('usuarios_ordenar', { 'campo': 'aiedad', 'direccion':'DESC' }) }}">Ordenar edad Descendente</a></td> <td><a href="{{ path('usuarios_ordenar', { 'campo': 'aiedad', 'direccion':'ASC' }) }}">Ordenar edad Ascendente</a></td></tr>
+    </table>
+
+    <table>
         <thead>
             <tr>
                 <th>Id</th>
@@ -44,4 +50,5 @@
             <a href="{{ path('usuarios_new') }}">Create a new usuario</a>
         </li>
     </ul>
+    <p><a href="http://localhost:8000/">Volver al menu principal</a></p>
 {% endblock %}
