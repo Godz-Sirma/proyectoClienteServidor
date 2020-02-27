@@ -1,3 +1,8 @@
 <p>
-    individual
+    <ng-container *ngIf="registrado; else sinRegistrar">
+        Bienvenido amigo
+      </ng-container>
+      <ng-template #sinRegistrar>
+        <a routerLink="/registrarse">Registrate aquí</a>
+      </ng-template>
 </p>

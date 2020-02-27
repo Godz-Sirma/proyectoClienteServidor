@@ -16,6 +16,7 @@ import { AyudaComponent } from '../ayuda/ayuda.component';
 import { ActividadesComponent } from '../actividades/actividades.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { ComprarComponent } from '../comprar/comprar.component';
+import { RegistrarseComponent } from './registrarse/registrarse.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path:"comprar/:kiTitulo/:ksNombre",component: ComprarComponent},
   {path:"carrito",component: CarritoComponent},
   {path:"help",component: AyudaComponent},
+  {path:"registrarse",component: RegistrarseComponent},
   
   {path:"landingPage",component: LandingPageComponent},
   {path:"",redirectTo:"/landingPage" ,pathMatch:"full"}

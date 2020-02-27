@@ -16,6 +16,7 @@ import { SidemenuComponent } from './sidemenu/sidemenu.component';
 import { FooterComponent } from './footer/footer.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { IndividualComponent } from './individual/individual.component';
+import { RegistrarseComponent } from './registrarse/registrarse.component';
 
 import { LandingPageComponent } from './landing-page/landing-page.component';
 
@@ -23,6 +24,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { SetRoleService } from '../servicios/set-role.service';
 import { GestionarSidemenuService } from '../servicios/gestionar-sidemenu.service';
 import { GestionarCarritoService } from '../servicios/gestionar-carrito.service';
+import { GestionarRegistrarseServiceService } from '../servicios/gestionar-registrarse.service';
 
 @NgModule({
   declarations: [
@@ -32,11 +34,13 @@ import { GestionarCarritoService } from '../servicios/gestionar-carrito.service'
     FooterComponent,
     IndividualComponent,
     LandingPageComponent,
-    CarritoComponent
+    CarritoComponent,
+    RegistrarseComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
+    FormsModule,
     HttpClientModule,
     PrincipalModule,
     AppRoutingModule
@@ -44,6 +48,7 @@ import { GestionarCarritoService } from '../servicios/gestionar-carrito.service'
   providers: [
     SetRoleService,
     GestionarSidemenuService,
+    GestionarRegistrarseServiceService,
     GestionarCarritoService
   ],
   bootstrap: [AppComponent]
