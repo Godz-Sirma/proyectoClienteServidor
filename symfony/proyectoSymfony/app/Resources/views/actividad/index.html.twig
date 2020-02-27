@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Actividads list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Ksnombre</th>
+                <th>Ascategoria</th>
+                <th>Aigrupoedad</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for actividad in actividads %}
+            <tr>
+                <td><a href="{{ path('actividad_show', { 'id': actividad.id }) }}">{{ actividad.id }}</a></td>
+                <td>{{ actividad.ksnombre }}</td>
+                <td>{{ actividad.ascategoria }}</td>
+                <td>{{ actividad.aigrupoedad }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('actividad_show', { 'id': actividad.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('actividad_edit', { 'id': actividad.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('actividad_new') }}">Create a new actividad</a>
+        </li>
+    </ul>
+{% endblock %}

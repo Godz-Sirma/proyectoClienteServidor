@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Profesors list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Xidni</th>
+                <th>Asmensaje</th>
+                <th>Asimagen</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for profesor in profesors %}
+            <tr>
+                <td><a href="{{ path('profesor_show', { 'id': profesor.id }) }}">{{ profesor.id }}</a></td>
+                <td>{{ profesor.xiDni }}</td>
+                <td>{{ profesor.asmensaje }}</td>
+                <td>{{ profesor.asimagen }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('profesor_show', { 'id': profesor.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('profesor_edit', { 'id': profesor.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('profesor_new') }}">Create a new profesor</a>
+        </li>
+    </ul>
+{% endblock %}

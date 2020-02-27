@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Sesions list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Xdni</th>
+                <th>Xclase</th>
+                <th>Asfecha</th>
+                <th>Xprecio</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for sesion in sesions %}
+            <tr>
+                <td><a href="{{ path('sesion_show', { 'id': sesion.id }) }}">{{ sesion.id }}</a></td>
+                <td>{{ sesion.xdni }}</td>
+                <td>{{ sesion.xclase }}</td>
+                <td>{{ sesion.asfecha }}</td>
+                <td>{{ sesion.xprecio }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('sesion_show', { 'id': sesion.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('sesion_edit', { 'id': sesion.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('sesion_new') }}">Create a new sesion</a>
+        </li>
+    </ul>
+{% endblock %}

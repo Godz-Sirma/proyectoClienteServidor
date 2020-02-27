@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Profesor</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ profesor.id }}</td>
+            </tr>
+            <tr>
+                <th>Xidni</th>
+                <td>{{ profesor.xiDni }}</td>
+            </tr>
+            <tr>
+                <th>Asmensaje</th>
+                <td>{{ profesor.asmensaje }}</td>
+            </tr>
+            <tr>
+                <th>Asimagen</th>
+                <td>{{ profesor.asimagen }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('profesor_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('profesor_edit', { 'id': profesor.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

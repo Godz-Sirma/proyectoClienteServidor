@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Usuario</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ usuario.id }}</td>
+            </tr>
+            <tr>
+                <th>Asnombre</th>
+                <td>{{ usuario.asnombre }}</td>
+            </tr>
+            <tr>
+                <th>Asapellido</th>
+                <td>{{ usuario.asapellido }}</td>
+            </tr>
+            <tr>
+                <th>Asdireccion</th>
+                <td>{{ usuario.asdireccion }}</td>
+            </tr>
+            <tr>
+                <th>Aiedad</th>
+                <td>{{ usuario.aiedad }}</td>
+            </tr>
+            <tr>
+                <th>Asrol</th>
+                <td>{{ usuario.asrol }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('usuarios_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('usuarios_edit', { 'id': usuario.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

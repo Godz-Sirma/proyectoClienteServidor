@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Sesion</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ sesion.id }}</td>
+            </tr>
+            <tr>
+                <th>Xdni</th>
+                <td>{{ sesion.xdni }}</td>
+            </tr>
+            <tr>
+                <th>Xclase</th>
+                <td>{{ sesion.xclase }}</td>
+            </tr>
+            <tr>
+                <th>Asfecha</th>
+                <td>{{ sesion.asfecha }}</td>
+            </tr>
+            <tr>
+                <th>Xprecio</th>
+                <td>{{ sesion.xprecio }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('sesion_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('sesion_edit', { 'id': sesion.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
